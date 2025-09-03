@@ -13,8 +13,21 @@ public static class Arrays
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
 
-        return []; // replace this return statement with your own
+        double[] multiples = new double[length]; // Step 1: Create an array of doubles, the size would be 'length' in order to hold the multiples.
+
+        for (int i = 0; i < length; i++) // Step 2: Use a loop to fill the array.
+                                         //For each position i in the array (from 0 to length-1):
+                                         //Calculate the multiple by multiplying (i + 1) by the 'number'.
+                                         //Store this calculated multiple in the array at index i.
+
+        {
+            multiples[i] = number * (i + 1); // Calculate the multiple and store it
+        }
+
+        // After the loop
+        return multiples; // Step 3: Create a return that contains all multiples.
     }
+
 
     /// <summary>
     /// Rotate the 'data' to the right by the 'amount'.  For example, if the data is 
@@ -29,5 +42,17 @@ public static class Arrays
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
+
+        // NOTE: We want to move the last 'amount' elements to the front of the list.
+
+        // Step 1: Use GetRange to copy the last 'amount' elements from the list
+        List<int> lastElements = data.GetRange(data.Count - amount, amount); // Get the last amount of the list
+
+        // Step 2: Use RemoveRange to remove those 'amount' elements from the end of the list. 
+        data.RemoveRange(data.Count - amount, amount); // Remove those elements from the end
+
+        // Step 3: Use InsertRange to insert those saved elements in Stept 1 and 2 at the beginning ( using the index 0).
+        data.InsertRange(0, lastElements);
     }
+
 }
