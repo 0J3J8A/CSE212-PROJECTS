@@ -10,7 +10,7 @@
         queue.Enqueue(100);
         var value = queue.Dequeue();
         Console.WriteLine(value);
-        // Defect(s) Found:
+        // Defect(s) Found: Index was out of range. Must be non-negative and less than the size of the collection. LINE 69
 
         Console.WriteLine("------------");
 
@@ -28,7 +28,7 @@
         Console.WriteLine(value);
         value = queue.Dequeue();
         Console.WriteLine(value);
-        // Defect(s) Found: 
+        // Defect(s) Found: The order would be diferent (Line 57 THE Insert is bad)
 
         Console.WriteLine("------------");
 
@@ -44,7 +44,7 @@
         catch (IndexOutOfRangeException) {
             Console.WriteLine("I got the exception as expected.");
         }
-        // Defect(s) Found: 
+        // Defect(s) Found: NO error here
     }
 
     private readonly List<int> _queue = new();
@@ -54,7 +54,7 @@
     /// </summary>
     /// <param name="value">Integer value to add to the queue</param>
     private void Enqueue(int value) {
-        _queue.Insert(0, value);
+        _queue.Add(value); // Use Add and no Insertm, fixing the defect of test 2 
     }
 
     /// <summary>
@@ -66,8 +66,8 @@
         if (_queue.Count <= 0)
             throw new IndexOutOfRangeException();
 
-        var value = _queue[1];
-        _queue.RemoveAt(1);
+        var value = _queue[0]; // Change to 0, fixing the index, defect in test 1
+        _queue.RemoveAt(0);
         return value;
     }
 }
