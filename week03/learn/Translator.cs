@@ -25,6 +25,7 @@ public class Translator
     public void AddWord(string fromWord, string toWord)
     {
         // ADD YOUR CODE HERE
+        _words[fromWord] = toWord; //USING _words OF THE LINE NUMBER 14
     }
 
     /// <summary>
@@ -32,9 +33,16 @@ public class Translator
     /// </summary>
     /// <param name="fromWord">The word to translate</param>
     /// <returns>The translated word or "???" if no translation is available</returns>
-    public string Translate(string fromWord)
+    public string Translate(string fromWord) // USING fromWord OF THE LINE NUMBER 34
     {
         // ADD YOUR CODE HERE
-        return "";
+        string newWord = "???"; // If the translation is not available for a word, then "???" should be returned instead
+
+        if (_words.ContainsKey(fromWord))
+        {
+            newWord = _words[fromWord];
+        }
+
+        return newWord; //newWord is the variable name, LINE NUMBER 39
     }
 }
