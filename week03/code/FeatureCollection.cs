@@ -7,7 +7,7 @@ public class FeatureCollection
     public List<Feature> Features { get; set; }
 }
 
-public class Metadata
+public class Metadata // assignee each property of the file (Api, Count etc..)
 {
     public long Generated { get; set; }
     public string Url { get; set; }
@@ -20,12 +20,12 @@ public class Metadata
 public class Feature
 {
     public string Type { get; set; }
-    public Properties Properties { get; set; }
-    public Geometry Geometry { get; set; }
+    public Properties Properties { get; set; } // asignee the Properties class
+    public Geometry Geometry { get; set; } // asignee the Geometry class
     public string Id { get; set; }
 }
 
-public class Properties
+public class Properties //create the Properties class
 {
     public decimal Mag { get; set; }
     public string Place { get; set; }
@@ -53,7 +53,7 @@ public class Properties
     public string Type { get; set; }
 }
 
-public class Geometry
+public class Geometry //create the Geometry class
 {
     public string Type { get; set; }
     public List<decimal> Coordinates { get; set; }

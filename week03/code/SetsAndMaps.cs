@@ -72,7 +72,7 @@ public static class SetsAndMaps
             {
                 string degree = fields[3].Trim(); // Searching in the 4th column (USING the index #3)
 
-                // Counting the degrees
+                // Counting degrees
                 if (degrees.ContainsKey(degree))
                 {
                     degrees[degree]++;
@@ -106,7 +106,7 @@ public static class SetsAndMaps
     {
         // TODO Problem 3 - ADD YOUR CODE HERE
         // Remove spaces and convert to lowercase both WORDS
-        // HANDLE both assumptions
+        // HANDLE both assumptions in line 112 and 113
         // Assumption #1: When determining if two words are anagrams, you should ignore any spaces.
         // Assumption #2: You should ignore letter case. For example, 'Ab' and 'bA' should be considered anagrams.
         string cleanWord1 = word1.Replace(" ", "").ToLower();
@@ -114,12 +114,12 @@ public static class SetsAndMaps
 
         // If lengths are different after removing spaces, they CANNOT be anagrams
         if (cleanWord1.Length != cleanWord2.Length)
-            return false;
+            return false; //using false as word is NOT an anagram
 
-        // Creating a Dictionary to counting letters frequencies
+        // Creating a Dictionary to counting letters
         Dictionary<char, int> charCount = new Dictionary<char, int>();
 
-        // Count letters from first word
+        // Counting letters from first word
         foreach (char l in cleanWord1)
         {
             if (charCount.ContainsKey(l))
@@ -132,7 +132,7 @@ public static class SetsAndMaps
         foreach (char l in cleanWord2)
         {
             if (!charCount.ContainsKey(l))
-                return false; // Means the Letter is not found in first word
+                return false; // Because the Letter is not found in first word
 
             charCount[l]--;
 
