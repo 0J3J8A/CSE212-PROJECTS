@@ -30,7 +30,7 @@ public class LinkedList : IEnumerable<int>
     /// <summary>
     /// Insert a new node at the back (i.e. the tail) of the linked list.
     /// </summary>
-    public void InsertTail(int value)
+    public void InsertTail(int value) // PROBLEM NUMBER 1 InserTail
     {
         // TODO Problem 1
         // Create new node
@@ -77,7 +77,7 @@ public class LinkedList : IEnumerable<int>
     /// <summary>
     /// Remove the last node (i.e. the tail) of the linked list.
     /// </summary>
-    public void RemoveTail()
+    public void RemoveTail() // PROBLEM NUMBER 2 RemoveTail
     {
         // TODO Problem 2
         // If the list has only one item in it, then set head and tail 
@@ -135,7 +135,7 @@ public class LinkedList : IEnumerable<int>
     /// <summary>
     /// Remove the first node that contains 'value'.
     /// </summary>
-    public void Remove(int value)
+    public void Remove(int value) // PROBLEM NUMBER 3 Remove
     {
         // TODO Problem 3
         // Search for the node that matches 'value' by starting at the head of the list.
@@ -171,7 +171,7 @@ public class LinkedList : IEnumerable<int>
     /// <summary>
     /// Search for all instances of 'oldValue' and replace the value to 'newValue'.
     /// </summary>
-    public void Replace(int oldValue, int newValue)
+    public void Replace(int oldValue, int newValue) // PROBLEM NUMBER 4 Replace
     {
         // TODO Problem 4
         // Search for all nodes that match 'oldValue' by starting at the head of the list.
@@ -211,7 +211,7 @@ public class LinkedList : IEnumerable<int>
     /// <summary>
     /// Iterate backward through the Linked List
     /// </summary>
-    public IEnumerable Reverse()
+    public IEnumerable Reverse() // PROBLEM NUMBER 5 Reverse
     {
         // TODO Problem 5
         var curr = _tail; // Start at the end since this is a backward iteration. //USING THE SAME AS LINE 203, BUT TAIL
